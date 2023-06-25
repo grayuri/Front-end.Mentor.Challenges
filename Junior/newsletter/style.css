@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --tomato: hsl(4, 100%, 67%);
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --charcoal-grey-trans: hsla(235, 18%, 26%, 0.5);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:var(--dark-slate-grey);
+  width: 100%;
+  height: 100vh;
+  font-size: 62.5%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  /* width: 60%; */
+  min-width: 840px;
+  max-width: 1000px;
+  background: var(--white);
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0px 16px 32px 0px hsla(0, 0%, 0%, 0.25);
+  -webkit-box-shadow: 0px 16px 32px 0px hsla(0, 0%, 0%, 0.25);
+  -moz-box-shadow: 0px 16px 32px 0px hsla(0, 0%, 0%, 0.25);
+}
+
+.container-sucess {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 16px;
+
+  max-width: 400px;
+  background: var(--white);
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0px 16px 32px 0px hsla(0, 0%, 0%, 0.25);
+  -webkit-box-shadow: 0px 16px 32px 0px hsla(0, 0%, 0%, 0.25);
+  -moz-box-shadow: 0px 16px 32px 0px hsla(0, 0%, 0%, 0.25);
+}
+
+.container-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  width: 60%;
+  padding: 0 32px;
+}
+
+.title {
+  color: var(--charcoal-grey);
+  font-size: 2.4rem;
+}
+
+.title.sucess {
+  text-align: center;
+}
+
+.advantages-list p, .paragraph, .input-labels, input, button {
+  color: var(--charcoal-grey);
+  font-size: 1.2rem;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.advantages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.advantages-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  list-style: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-labels {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-weight: 700;
+  position: relative;
+}
+
+.error-email { display: none; }
+
+.input-labels.error .error-email {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--tomato);
+  font-size: 1.0rem;
+  display: block;
+}
+
+input {
+  height: 48px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--grey);
+}
+
+.input-labels.error input  {
+  background: hsla(4, 100%, 67%, 0.25);
+  border: 2px solid var(--tomato);
+}
+
+.input-labels.error input:focus {
+  outline: 1px solid var(--tomato);
+}
+
+input:focus {
+  outline: 1px solid var(--charcoal-grey);
+}
+
+button {
+  height: 56px;
+  padding: 8px;
+  border-radius: 8px;
+  background: var(--charcoal-grey);
+  color: var(--white);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 16px 32px 0px var(--charcoal-grey-trans);
+  -webkit-box-shadow: 0px 16px 32px 0px var(--charcoal-grey-trans);
+  -moz-box-shadow: 0px 16px 32px 0px var(--charcoal-grey-trans);
+}
+
+button.sucess {
+  width: 100%;
+}
+
+button:hover, button:active {
+  background: linear-gradient(190deg, #ffaf51 0, #ff9e4d 16.67%, #ff8744 33.33%, #ff6a39 50%, #f14931 66.67%, #e72630 83.33%, #e10035 100%);;
+  box-shadow: 0px 16px 32px 0px rgba(255,106,57,0.25);
+  -webkit-box-shadow: 0px 16px 32px 0px rgba(255,106,57,0.25);
+  -moz-box-shadow: 0px 16px 32px 0px rgba(255,106,57,0.25);
+}
+
+.container-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 40%;
+}
+
+#desktop-image {
+  width: 100%;
+  height: 100%;
+}
+
+#mobile-image {
+  display: none;
+}
+
+@media (max-width: 880px) {
+  .container {
+    flex-direction: column-reverse;
+    justify-content: center;
+    min-width: 100vw;
+    border-radius: 0;
+    padding: 0;
+    padding-bottom: 32px;
+  }
+
+  .container-sucess {
+    justify-content: center;
+    min-width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    padding-bottom: 32px;
+  }
+
+  #desktop-image {
+    display: none;
+  }
+
+  .container-image {
+    width: 100%;
+  }
+
+  #mobile-image {
+    display: block;
+    width: 100%;
+  }
+
+  .container-content {
+    width: 100%;
+  }
+
+  .advantages-list p, .paragraph, .input-labels, input, button {
+    font-size: 1rem;
+  }
+  
+}
